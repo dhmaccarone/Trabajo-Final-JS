@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MyExpense - Administra tu dinero</title>
+
+    <!-- CSS-->
+
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <!--Bootstrap CSS-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  </head>
+
+  <body>
+
+    <!--Encabezado con barra de navegación-->
+
+    <header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+
+          <h1 class="navbar-brand ms-5"><a href="index.html"><img id="logo" class="img-fluid" src="assets/images/logo1.png" alt="Logo"></a></h1>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+            <ul class="navbar-nav">
+
+              <li class="nav-item me-3">
+
+                <a class="nav-link" aria-current="page" href="#main">Inicio</a>
+
+              </li>
+
+              <li class="nav-item me-3">
+
+                <a class="nav-link" href="#info-container">Acerca de</a>
+
+              </li>
+
+              <li class="nav-item me-3">
+
+                <a class="nav-link" href="#footer">Contacto</a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </header>
+
+    <!--Carousel con infomración del simulador-->
+    
+    <section class="carousel">
+
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+
+            <img src="assets/images/fondo.jpg" class="d-block w-100" alt="Fondo">
+
+          </div>
+
+          <div class="carousel-item">
+
+            <img src="assets/images/fondo2.jpg" class="d-block w-100" alt="Fondo2">
+
+          </div>
+
+          <div class="carousel-item">
+
+            <img src="assets/images/fondo3.jpg" class="d-block w-100" alt="Fondo3">
+
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+          <span class="visually-hidden">Previous</span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+          <span class="visually-hidden">Next</span>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    </section>
+
+    <!--Efecto ola-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f3f4f5" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,133.3C672,149,768,171,864,186.7C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+    <!--Contenedor del simulador-->
+
+    <section id="main" class="container">
+
+      <h2 class="mt-5 mb-5 text-center">¡Controla tus gastos aquí!</h2>
+
+      <h4 id="tituloUsuario" class="text-center mt-5 mb-4 fw-bold"></h4>
+
+      <div id="datosDelUsuario" class="d-flex justify-content-center mt-3 mb-3">
+
+        <p id="tituloBilletera" class="text-center mb-3 mx-3 text-success fw-bold fs-5"></p>
+
+        <p id="tituloNombre" class="text-center mb-3 mx-3 fw-bold fs-5"></p>
+
+      </div>
+
+      <p class="text-center mt-5 fw-bold" id="usuarioListaGastos">Tus gastos son:</p>
+
+      <div id="listaDeGastos" class="list-unstyled text-center">
+        
+      </div>
+
+      <form id="formularioDatos" class="container">
+
+        <div class="mb-3 primer-formulario">
+
+          <label for="usuarioNombre" class="form-label">Nombre</label>
+
+          <input type="text" class="form-control" id="usuarioNombre" placeholder="Ingrese su nombre" autocomplete="off" required />
+
+          <label class="mt-4 mb-2" for="usuarioDinero" class="form-label">Billetera</label>
+
+          <input type="number" class="form-control" id="usuarioDinero" placeholder="Ingrese su dinero"
+            aria-describedby="ingresoAyuda" autocomplete="off" required />
+
+          <div id="ingresoAyuda" class="form-text">
+
+            Recuerda ingresar sólo números
+
+          </div>
+
+        </div>
+
+        <div class="mb-3 segundo-formulario">
+
+          <label for="usuarioTituloGasto" class="form-label">¿En qué gastaste tu dinero?</label>
+
+          <input type="text" class="form-control" id="usuarioTituloGasto" placeholder="Ingrese el nombre del gasto" />
+
+          <label class="form-label mt-4">Selecciona una categoría</label>
+
+          <select id="selectCategoria" class="form-select d-block">
+
+          </select>
+
+          <label class="mt-4 mb-2" for="usuarioMontoGasto" class="form-label label-1">¿Cuánto dinero gastaste?</label>
+
+          <input type="number" class="form-control" id="usuarioMontoGasto" placeholder="Ingrese su gasto"
+            aria-describedby="ingresoAyuda" />
+
+          <div id="ingresoAyuda" class="form-text">
+
+            Recuerda ingresar sólo números
+
+          </div>
+
+        </div>
+
+        <div class="d-flex justify-content-center">
+
+          <button id="botonEnviarDatos" type="submit" class="btn btn-success m-2">
+
+            Ingresar
+
+          </button>
+
+          <button id="botonUsuarioGastos" type="button" class="btn btn-primary m-2">
+
+            Agregar gastos
+
+          </button>
+
+          <button id="botonCrearGasto" type="button" class="btn btn-success m-2">
+
+            Crear gasto
+
+          </button>
+
+          <button id="botonResetearDatos" type="reset" class="btn btn-danger m-2">
+
+            Reiniciar
+
+          </button>
+
+          <button id="botonVerGastos" type="button" class="btn btn-dark m-2">
+
+            Ver gastos
+
+          </button>
+
+          <button id="botonBorrarDatos" type="button" class="btn btn-danger m-2">
+
+            Borrar datos
+
+          </button>
+
+          <button id="botonRegresarInicio" type="button" class="btn btn-primary m-2 mt-5">
+
+            Regresar
+
+          </button> 
+
+          <button id="botonSumaTotalGastos" type="button" class="btn btn-outline-secondary m-2 mt-5">
+
+            Sumar gastos
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+    <!--Efecto ola-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f3f4f5" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,133.3C672,149,768,171,864,186.7C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+
+    </svg>
+
+    <!--Efecto ola-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f3f4f5" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,133.3C672,149,768,171,864,186.7C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+    <!--Sección de cards-->
+
+    <section id="info-container" class="mt-5 mb-5">
+
+      <h3 class="info-container__h3 text-center text-white fs-2">¿Por qué MyExpense?</h3>
+
+      <div class="container-fluid">
+
+        <div class="row gap-5 gap-lg-0">
+
+          <div class="col-12 col-lg-4">
+
+            <div class="card m-auto" style="width: 18rem; height: 20rem;">
+
+              <div class="info-container__card card-body">
+
+                <i class="info-container__card__i fa-solid fa-hand-holding-dollar d-block text-center"></i>
+
+                <h5 class="info-container__card__h5 text-center card-title fw-bold">Controla tus gastos</h5>
+
+                <p class="info-container__card__p text-center card-text mt-3">Sigue los movimientos de tu billetera diariamente. MyExpense te permite mantener organizada tu vida económica.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-4">
+
+            <div class="card m-auto" style="width: 18rem; height: 20rem;">
+
+              <div class="info-container__card card-body">
+
+                <i class="info-container__card__i fa-solid fa-child-reaching d-block text-center"></i>
+
+                <h5 class="info-container__card__h5 text-center card-title fw-bold">Fácil de usar</h5>
+
+                <p class="info-container__card__p text-center card-text mt-3">Simulador con interfaz sencilla que permite al usuario sentirse cómodo durante el uso.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-4">
+
+            <div class="card m-auto" style="width: 18rem; height: 20rem;">
+
+              <div class="info-container__card card-body">
+
+                <i class="info-container__card__i fa-solid fa-cloud-arrow-down d-block text-center"></i>
+
+                <h5 class="info-container__card__h5 text-center card-title fw-bold">Almacena datos</h5>
+
+                <p class="info-container__card__p text-center card-text mt-3">MyExpense se encarga de almacenar tus datos, evitando cualquier pérdida de los mismos.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--Efecto ola-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      
+      <path fill="#f3f4f5" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,133.3C672,149,768,171,864,186.7C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+
+    </svg>
+
+    <!--Efecto ola-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+      <path fill="#f3f4f5" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,133.3C672,149,768,171,864,186.7C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+    </svg>
+
+    <!--Footer con redes y copyright-->
+
+    <footer id="footer" class="mt-5">
+
+      <ul class="d-flex justify-content-center list-unstyled">
+
+        <li class="m-2">
+
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fs-2 text-white"></i></a>
+
+        </li>
+
+        <li class="m-2">
+
+          <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fs-2 text-white"></i></a>
+
+        </li>
+
+        <li class="m-2">
+
+          <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fs-2 text-white"></i></a>
+
+        </li>
+        
+      </ul>
+
+      <p class="mt-5 text-center text-white">
+
+        ©2023 MyExpense | Todos los derechos reservados | info@myexpense.com |
+
+        <a href="#" class="">Privacidad</a>
+
+      </p>
+
+    </footer>
+
+    <!--Luxon JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
+
+    <!--Sweet Alert JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Boostrap JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!--Fontawesome-->
+
+    <script src="https://kit.fontawesome.com/41d1e297c9.js" crossorigin="anonymous"></script>
+
+    <!--My JS-->
+
+    <script src="assets/scripts/storage.js"></script>
+
+    <script src="assets/scripts/objects.js"></script>
+
+    <script src="assets/scripts/nodos.js"></script>
+
+    <script src="assets/scripts/main.js"></script>
+
+  </body>
+
+</html>

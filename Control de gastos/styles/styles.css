@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+
+
+body {
+
+    font-family: 'Roboto', sans-serif !important;
+
+    background-color: #ddd7d7;
+
+    background: linear-gradient(-45deg, #d1d500cb, #0b0bac9f, #ff5576);
+
+    background-attachment: fixed;
+
+    background-size: 400% 400%;
+
+    animation: gradiente 15s ease infinite;
+
+}
+
+
+#botonUsuarioGastos,
+
+#botonCrearGasto,
+
+#botonVerGastos,
+
+#botonBorrarDatos,
+
+#botonRegresarInicio,
+
+#botonSumaTotalGastos, 
+
+.segundo-formulario,
+
+#tituloUsuario,
+
+#tituloBilletera,
+
+#usuarioListaGastos {
+
+    display: none;
+
+}
+
+
+#logo {
+
+    width: 7em;
+
+}
+
+#main-svg {
+
+    width: 150px !important;
+
+    height: 150px !important;
+
+}
+
+#main {
+
+    margin-top: 12em !important;
+
+    margin-bottom: 10em !important;
+
+    padding: 5em !important;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+}
+
+#datosDelUsuario {
+
+    width: 40%;
+
+    margin: auto;
+
+}
+
+#tituloNombre {
+
+    display: none;
+
+}
+
+.info-container__card__i {
+
+    margin: 1em 0;
+
+    font-size: 3em;
+
+}
+
+.info-container__h3 {
+
+    margin-bottom: 6em;
+
+}
+
+
+@keyframes gradiente {
+
+	0% {
+
+		background-position: 0% 50%;
+
+	}
+
+	50% {
+
+		background-position: 100% 50%;
+
+	}
+
+	100% {
+
+		background-position: 0% 50%;
+
+	}
+    
+}
